@@ -58,22 +58,22 @@ fun TracingScreen() {
         rawPath.computeBounds(bounds, true)
 
         val targetSize = 800f
-        val scale = min(targetSize / (if (bounds.width() == 0f) 1f else bounds.width()), 
-                        targetSize / (if (bounds.height() == 0f) 1f else bounds.height()))
-        
+        val scale = min(targetSize / (if (bounds.width() == 0f) 1f else bounds.width()),
+            targetSize / (if (bounds.height() == 0f) 1f else bounds.height()))
+
         val matrix = android.graphics.Matrix()
         matrix.postTranslate(-bounds.left, -bounds.top)
         matrix.postScale(scale, scale)
         matrix.postTranslate(100f, 100f)
-        
+
         rawPath.transform(matrix)
         return rawPath.asComposePath()
     }
 
     // Prepare paths
     val letterPath = remember(currentLetter) { scalePath(currentLetter.mainPath) }
-    val guidePaths = remember(currentLetter) { 
-        currentLetter.guidePaths.map { scalePath(it) } 
+    val guidePaths = remember(currentLetter) {
+        currentLetter.guidePaths.map { scalePath(it) }
     }
 
     Column(
@@ -96,8 +96,10 @@ fun TracingScreen() {
                     detectDragGestures(
                         onDragStart = { offset ->
                             isTracing = true
-                            val newPath = Path()
-                            newPath.moveTo(offset.x, offset.y)
+                            val newPath = Path().apply {
+                                addPath(userPath) // Preserves the previous lines
+                                moveTo(offset.x, offset.y)
+                            }
                             userPath = newPath
                         },
                         onDragEnd = { isTracing = false },
@@ -120,8 +122,8 @@ fun TracingScreen() {
                     color = Color.LightGray.copy(alpha = 0.5f),
                     style = Stroke(width = 60f, cap = StrokeCap.Round, join = StrokeJoin.Round)
                 )
-                
-                // 2. Draw additional guide lines (like for 'O')
+
+                // 2. Draw additional guide lines
                 guidePaths.forEach { path ->
                     drawPath(
                         path = path,
@@ -145,7 +147,7 @@ fun TracingScreen() {
             Button(onClick = { userPath = Path() }) {
                 Text("Clear")
             }
-            
+
             Button(onClick = {
                 currentLetterIndex = (currentLetterIndex + 1) % letters.size
                 userPath = Path()
