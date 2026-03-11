@@ -191,7 +191,7 @@ fun TracingScreen() {
                     style = Stroke(width = 60f, cap = StrokeCap.Round, join = StrokeJoin.Round)
                 )
 
-                // 2. Draw additional guide lines
+                // 2. Draw additional guidelines
                 guidePaths.forEach { path ->
                     drawPath(
                         path = path,
