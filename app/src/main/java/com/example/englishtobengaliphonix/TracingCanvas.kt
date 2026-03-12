@@ -63,7 +63,7 @@ fun TracingCanvas(
                 drawPath(
                     path = userPath,
                     color = Color(0xFF4CAF50),
-                    style = Stroke(width = 80f, cap = StrokeCap.Round, join = StrokeJoin.Round)
+                    style = Stroke(width = 100f, cap = StrokeCap.Round, join = StrokeJoin.Round)
                 )
             }
         }

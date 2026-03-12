@@ -3,6 +3,7 @@ package com.example.englishtobengaliphonix
 
 import android.app.Application
 import android.media.MediaPlayer
+import androidx.compose.ui.geometry.Offset
 import androidx.compose.ui.graphics.Path
 import androidx.lifecycle.AndroidViewModel
 import com.example.englishtobengaliphonix.AlphabetPaths
@@ -54,6 +55,21 @@ class TracingViewModel(application: Application) : AndroidViewModel(application)
     }
 
     fun updatePath(newPath: Path) {
+        _userPath.value = newPath
+    }
+
+    // Fixed path drawing to avoid race conditions and improve responsiveness
+    fun startPath(offset: Offset) {
+        val newPath = Path()
+        newPath.addPath(_userPath.value)
+        newPath.moveTo(offset.x, offset.y)
+        _userPath.value = newPath
+    }
+
+    fun dragTo(position: Offset) {
+        val newPath = Path()
+        newPath.addPath(_userPath.value)
+        newPath.lineTo(position.x, position.y)
         _userPath.value = newPath
     }
 
