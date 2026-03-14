@@ -1,6 +1,6 @@
 # Bengali Alphabet Tracing — বাংলা বর্ণমালা ট্রেসিং
 
-An interactive Android app for learning to write the Bengali alphabet through guided tracing exercises, with audio pronunciation for every character.
+An interactive ***Android app*** for learning to write the Bengali alphabet through guided tracing exercises (not stroke), with audio pronunciation for every character.
 
 ---
 
