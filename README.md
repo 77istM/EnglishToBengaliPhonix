@@ -1,0 +1,89 @@
+# Bengali Alphabet Tracing — বাংলা বর্ণমালা ট্রেসিং
+
+An interactive Android app for learning to write the Bengali alphabet through guided tracing exercises, with audio pronunciation for every character.
+
+---
+
+## Features
+
+### 📚 61 Bengali Characters
+The app covers the complete Bengali writing system across four categories:
+
+- **Vowels (স্বরবর্ণ)** — 11 vowel letters
+- **Consonants (ব্যঞ্জনবর্ণ)** — 39 consonant letters
+- **Numbers (সংখ্যা)** — Bengali numerals 0–10 (11 numerals)
+- **All** — all 61 characters in sequence
+
+![Bengali Alphabet Chart](asset/Bengali_Alphabet_-_বাংলা_বর্ণমালা.svg)
+
+---
+
+### ✍️ Interactive Tracing Canvas
+Trace each letter by drawing on the on-screen canvas with your finger:
+
+- A **light grey outline** shows the correct letter shape as a guide.
+- Your drawn stroke appears in **green** so you can compare it to the guide.
+- Tap **Clear** to erase your attempt and try again.
+
+---
+
+### 🔊 Audio Pronunciation
+Every character has a recorded MP3 pronunciation. Tap the **play button** next to the letter to hear it spoken aloud, reinforcing the connection between shape and sound.
+
+---
+
+### 🗂️ Category Selector
+Filter the practice session to focus on a specific group:
+
+| Category | Description |
+|---|---|
+| Vowels / স্বরবর্ণ | অ আ ই ঈ উ ঊ ঋ এ ঐ ও ঔ |
+| Consonants / ব্যঞ্জনবর্ণ | ক খ গ ঘ ঙ … and more |
+| Numbers / সংখ্যা | ০ ১ ২ ৩ ৪ ৫ ৬ ৭ ৮ ৯ ১০ |
+| All | Complete set of 62 characters |
+
+---
+
+### Vowels (স্বরবর্ণ)
+
+![Vowel Chart](asset/vowel.png)
+
+---
+
+### Consonants (ব্যঞ্জনবর্ণ)
+
+![Consonant Chart](asset/consonant.png)
+
+---
+
+### Numbers (সংখ্যা)
+
+![Number Chart](asset/number.png)
+
+---
+
+## How to Use
+
+1. **Select a category** using the chips at the top of the screen.
+2. **Read the letter** shown in the header.
+3. **Tap the play button** to hear the pronunciation.
+4. **Trace the letter** on the canvas by dragging your finger over the grey guide shape.
+5. Tap **Clear** to erase and retry, or use **Next / Previous** to move to another character.
+
+---
+
+## Tech Stack
+
+| Component | Technology |
+|---|---|
+| Language | Kotlin |
+| UI | Jetpack Compose |
+| Architecture | MVVM with ViewModel & StateFlow |
+| Design | Material Design 3 |
+| Audio | Android MediaPlayer |
+
+---
+
+## Screenshots / Demo
+
+A short demo of the app in action is available at [`asset/demo vid.webm`](asset/demo%20vid.webm).
