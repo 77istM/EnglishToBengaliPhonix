@@ -79,6 +79,7 @@ Filter the practice session to focus on a specific group:
 
 ---
 
-## Screenshots / Demo
+## Demo Video
 
-A short demo of the app in action is available at [`asset/demo vid.webm`](asset/demo%20vid.webm).
+- A short is available at: https://youtube.com/shorts/nPt05Z7ERsM.
+- Google Play: //Working towards
